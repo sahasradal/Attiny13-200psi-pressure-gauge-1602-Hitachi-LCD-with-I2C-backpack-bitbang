@@ -1,0 +1,1292 @@
+
+AVRASM ver. 2.2.7  C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm Fri Oct 09 00:49:08 2020
+
+[builtin](2): Including file 'C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn13adef.inc'
+C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm(34): warning: Register r26 already defined by the .DEF directive
+[builtin](2): Including file 'C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn13adef.inc'
+                                 
+                                 ;.equ Number = 4294000000 ; slightly above four billions
+                                 
+                                 ;***** Created: 2011-02-09 12:03 ******* Source: ATtiny13A.xml ***********
+                                 ;*************************************************************************
+                                 ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+                                 ;* 
+                                 ;* Number            : AVR000
+                                 ;* File Name         : "tn13Adef.inc"
+                                 ;* Title             : Register/Bit Definitions for the ATtiny13A
+                                 ;* Date              : 2011-02-09
+                                 ;* Version           : 2.35
+                                 ;* Support E-mail    : avr@atmel.com
+                                 ;* Target MCU        : ATtiny13A
+                                 ;* 
+                                 ;* DESCRIPTION
+                                 ;* When including this file in the assembly program file, all I/O register 
+                                 ;* names and I/O register bit names appearing in the data book can be used.
+                                 ;* In addition, the six registers forming the three data pointers X, Y and 
+                                 ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+                                 ;* SRAM is also defined 
+                                 ;* 
+                                 ;* The Register names are represented by their hexadecimal address.
+                                 ;* 
+                                 ;* The Register Bit names are represented by their bit number (0-7).
+                                 ;* 
+                                 ;* Please observe the difference in using the bit names with instructions
+                                 ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc"
+                                 ;* (skip if bit in register set/cleared). The following example illustrates
+                                 ;* this:
+                                 ;* 
+                                 ;* in    r16,PORTB             ;read PORTB latch
+                                 ;* sbr   r16,(1<<PB6)+(1<<PB5) ;set PB6 and PB5 (use masks, not bit#)
+                                 ;* out   PORTB,r16             ;output to PORTB
+                                 ;* 
+                                 ;* in    r16,TIFR              ;read the Timer Interrupt Flag Register
+                                 ;* sbrc  r16,TOV0              ;test the overflow flag (use bit#)
+                                 ;* rjmp  TOV0_is_set           ;jump if set
+                                 ;* ...                         ;otherwise do something else
+                                 ;*************************************************************************
+                                 
+                                 #ifndef _TN13ADEF_INC_
+                                 #define _TN13ADEF_INC_
+                                 
+                                 
+                                 #pragma partinc 0
+                                 
+                                 ; ***** SPECIFY DEVICE ***************************************************
+                                 .device ATtiny13A
+                                 #pragma AVRPART ADMIN PART_NAME ATtiny13A
+                                 .equ	SIGNATURE_000	= 0x1e
+                                 .equ	SIGNATURE_001	= 0x90
+                                 .equ	SIGNATURE_002	= 0x07
+                                 
+                                 #pragma AVRPART CORE CORE_VERSION V2
+                                 #pragma AVRPART CORE NEW_INSTRUCTIONS lpm rd,z+
+                                 
+                                 
+                                 ; ***** I/O REGISTER DEFINITIONS *****************************************
+                                 ; NOTE:
+                                 ; Definitions marked "MEMORY MAPPED"are extended I/O ports
+                                 ; and cannot be used with IN/OUT instructions
+                                 .equ	SREG	= 0x3f
+                                 .equ	SPL	= 0x3d
+                                 .equ	GIMSK	= 0x3b
+                                 .equ	GIFR	= 0x3a
+                                 .equ	TIMSK0	= 0x39
+                                 .equ	TIFR0	= 0x38
+                                 .equ	SPMCSR	= 0x37
+                                 .equ	OCR0A	= 0x36
+                                 .equ	MCUCR	= 0x35
+                                 .equ	MCUSR	= 0x34
+                                 .equ	TCCR0B	= 0x33
+                                 .equ	TCNT0	= 0x32
+                                 .equ	OSCCAL	= 0x31
+                                 .equ	BODCR	= 0x30
+                                 .equ	TCCR0A	= 0x2f
+                                 .equ	DWDR	= 0x2e
+                                 .equ	OCR0B	= 0x29
+                                 .equ	GTCCR	= 0x28
+                                 .equ	CLKPR	= 0x26
+                                 .equ	PRR	= 0x25
+                                 .equ	WDTCR	= 0x21
+                                 .equ	EEAR	= 0x1e
+                                 .equ	EEDR	= 0x1d
+                                 .equ	EECR	= 0x1c
+                                 .equ	PORTB	= 0x18
+                                 .equ	DDRB	= 0x17
+                                 .equ	PINB	= 0x16
+                                 .equ	PCMSK	= 0x15
+                                 .equ	DIDR0	= 0x14
+                                 .equ	ACSR	= 0x08
+                                 .equ	ADMUX	= 0x07
+                                 .equ	ADCSRA	= 0x06
+                                 .equ	ADCH	= 0x05
+                                 .equ	ADCL	= 0x04
+                                 .equ	ADCSRB	= 0x03
+                                 
+                                 
+                                 ; ***** BIT DEFINITIONS **************************************************
+                                 
+                                 ; ***** AD_CONVERTER *****************
+                                 ; ADMUX - The ADC multiplexer Selection Register
+                                 .equ	MUX0	= 0	; Analog Channel and Gain Selection Bits
+                                 .equ	MUX1	= 1	; Analog Channel and Gain Selection Bits
+                                 .equ	ADLAR	= 5	; Left Adjust Result
+                                 .equ	REFS0	= 6	; Reference Selection Bit 0
+                                 
+                                 ; ADCSRA - The ADC Control and Status register
+                                 .equ	ADPS0	= 0	; ADC  Prescaler Select Bits
+                                 .equ	ADPS1	= 1	; ADC  Prescaler Select Bits
+                                 .equ	ADPS2	= 2	; ADC  Prescaler Select Bits
+                                 .equ	ADIE	= 3	; ADC Interrupt Enable
+                                 .equ	ADIF	= 4	; ADC Interrupt Flag
+                                 .equ	ADATE	= 5	; ADC Auto Trigger Enable
+                                 .equ	ADSC	= 6	; ADC Start Conversion
+                                 .equ	ADEN	= 7	; ADC Enable
+                                 
+                                 ; ADCH - ADC Data Register High Byte
+                                 .equ	ADCH0	= 0	; ADC Data Register High Byte Bit 0
+                                 .equ	ADCH1	= 1	; ADC Data Register High Byte Bit 1
+                                 .equ	ADCH2	= 2	; ADC Data Register High Byte Bit 2
+                                 .equ	ADCH3	= 3	; ADC Data Register High Byte Bit 3
+                                 .equ	ADCH4	= 4	; ADC Data Register High Byte Bit 4
+                                 .equ	ADCH5	= 5	; ADC Data Register High Byte Bit 5
+                                 .equ	ADCH6	= 6	; ADC Data Register High Byte Bit 6
+                                 .equ	ADCH7	= 7	; ADC Data Register High Byte Bit 7
+                                 
+                                 ; ADCL - ADC Data Register Low Byte
+                                 .equ	ADCL0	= 0	; ADC Data Register Low Byte Bit 0
+                                 .equ	ADCL1	= 1	; ADC Data Register Low Byte Bit 1
+                                 .equ	ADCL2	= 2	; ADC Data Register Low Byte Bit 2
+                                 .equ	ADCL3	= 3	; ADC Data Register Low Byte Bit 3
+                                 .equ	ADCL4	= 4	; ADC Data Register Low Byte Bit 4
+                                 .equ	ADCL5	= 5	; ADC Data Register Low Byte Bit 5
+                                 .equ	ADCL6	= 6	; ADC Data Register Low Byte Bit 6
+                                 .equ	ADCL7	= 7	; ADC Data Register Low Byte Bit 7
+                                 
+                                 ; ADCSRB - ADC Control and Status Register B
+                                 .equ	ADTS0	= 0	; ADC Auto Trigger Source 0
+                                 .equ	ADTS1	= 1	; ADC Auto Trigger Source 1
+                                 .equ	ADTS2	= 2	; ADC Auto Trigger Source 2
+                                 
+                                 ; DIDR0 - Digital Input Disable Register 0
+                                 .equ	ADC1D	= 2	; ADC2 Digital input Disable
+                                 .equ	ADC3D	= 3	; ADC3 Digital input Disable
+                                 .equ	ADC2D	= 4	; ADC2 Digital input Disable
+                                 .equ	ADC0D	= 5	; ADC0 Digital input Disable
+                                 
+                                 
+                                 ; ***** ANALOG_COMPARATOR ************
+                                 ; ADCSRB - ADC Control and Status Register B
+                                 .equ	ACME	= 6	; Analog Comparator Multiplexer Enable
+                                 
+                                 ; ACSR - Analog Comparator Control And Status Register
+                                 .equ	ACIS0	= 0	; Analog Comparator Interrupt Mode Select bit 0
+                                 .equ	ACIS1	= 1	; Analog Comparator Interrupt Mode Select bit 1
+                                 .equ	ACIE	= 3	; Analog Comparator Interrupt Enable
+                                 .equ	ACI	= 4	; Analog Comparator Interrupt Flag
+                                 .equ	ACO	= 5	; Analog Compare Output
+                                 .equ	ACBG	= 6	; Analog Comparator Bandgap Select
+                                 .equ	AINBG	= ACBG	; For compatibility
+                                 .equ	ACD	= 7	; Analog Comparator Disable
+                                 
+                                 ; DIDR0 - 
+                                 .equ	AIN0D	= 0	; AIN0 Digital Input Disable
+                                 .equ	AIN1D	= 1	; AIN1 Digital Input Disable
+                                 
+                                 
+                                 ; ***** EEPROM ***********************
+                                 ; EEAR - EEPROM Read/Write Access
+                                 .equ	EEARL	= EEAR	; For compatibility
+                                 .equ	EEAR0	= 0	; EEPROM Read/Write Access bit 0
+                                 .equ	EEAR1	= 1	; EEPROM Read/Write Access bit 1
+                                 .equ	EEAR2	= 2	; EEPROM Read/Write Access bit 2
+                                 .equ	EEAR3	= 3	; EEPROM Read/Write Access bit 3
+                                 .equ	EEAR4	= 4	; EEPROM Read/Write Access bit 4
+                                 .equ	EEAR5	= 5	; EEPROM Read/Write Access bit 5
+                                 
+                                 ; EEDR - EEPROM Data Register
+                                 .equ	EEDR0	= 0	; EEPROM Data Register bit 0
+                                 .equ	EEDR1	= 1	; EEPROM Data Register bit 1
+                                 .equ	EEDR2	= 2	; EEPROM Data Register bit 2
+                                 .equ	EEDR3	= 3	; EEPROM Data Register bit 3
+                                 .equ	EEDR4	= 4	; EEPROM Data Register bit 4
+                                 .equ	EEDR5	= 5	; EEPROM Data Register bit 5
+                                 .equ	EEDR6	= 6	; EEPROM Data Register bit 6
+                                 .equ	EEDR7	= 7	; EEPROM Data Register bit 7
+                                 
+                                 ; EECR - EEPROM Control Register
+                                 .equ	EERE	= 0	; EEPROM Read Enable
+                                 .equ	EEWE	= 1	; EEPROM Write Enable
+                                 .equ	EEPE	= EEWE	; For compatibility
+                                 .equ	EEMWE	= 2	; EEPROM Master Write Enable
+                                 .equ	EEMPE	= EEMWE	; For compatibility
+                                 .equ	EERIE	= 3	; EEProm Ready Interrupt Enable
+                                 .equ	EEPM0	= 4	; 
+                                 .equ	EEPM1	= 5	; 
+                                 
+                                 
+                                 ; ***** PORTB ************************
+                                 ; PORTB - Data Register, Port B
+                                 .equ	PORTB0	= 0	; 
+                                 .equ	PB0	= 0	; For compatibility
+                                 .equ	PORTB1	= 1	; 
+                                 .equ	PB1	= 1	; For compatibility
+                                 .equ	PORTB2	= 2	; 
+                                 .equ	PB2	= 2	; For compatibility
+                                 .equ	PORTB3	= 3	; 
+                                 .equ	PB3	= 3	; For compatibility
+                                 .equ	PORTB4	= 4	; 
+                                 .equ	PB4	= 4	; For compatibility
+                                 .equ	PORTB5	= 5	; 
+                                 .equ	PB5	= 5	; For compatibility
+                                 
+                                 ; DDRB - Data Direction Register, Port B
+                                 .equ	DDB0	= 0	; 
+                                 .equ	DDB1	= 1	; 
+                                 .equ	DDB2	= 2	; 
+                                 .equ	DDB3	= 3	; 
+                                 .equ	DDB4	= 4	; 
+                                 .equ	DDB5	= 5	; 
+                                 
+                                 ; PINB - Input Pins, Port B
+                                 .equ	PINB0	= 0	; 
+                                 .equ	PINB1	= 1	; 
+                                 .equ	PINB2	= 2	; 
+                                 .equ	PINB3	= 3	; 
+                                 .equ	PINB4	= 4	; 
+                                 .equ	PINB5	= 5	; 
+                                 
+                                 
+                                 ; ***** EXTERNAL_INTERRUPT ***********
+                                 ; MCUCR - MCU Control Register
+                                 .equ	ISC00	= 0	; Interrupt Sense Control 0 Bit 0
+                                 .equ	ISC01	= 1	; Interrupt Sense Control 0 Bit 1
+                                 
+                                 ; GIMSK - General Interrupt Mask Register
+                                 .equ	GICR	= GIMSK	; For compatibility
+                                 .equ	PCIE	= 5	; Pin Change Interrupt Enable
+                                 .equ	INT0	= 6	; External Interrupt Request 0 Enable
+                                 
+                                 ; GIFR - General Interrupt Flag register
+                                 .equ	PCIF	= 5	; Pin Change Interrupt Flag
+                                 .equ	INTF0	= 6	; External Interrupt Flag 0
+                                 
+                                 ; PCMSK - Pin Change Enable Mask
+                                 .equ	PCINT0	= 0	; Pin Change Enable Mask Bit 0
+                                 .equ	PCINT1	= 1	; Pin Change Enable Mask Bit 1
+                                 .equ	PCINT2	= 2	; Pin Change Enable Mask Bit 2
+                                 .equ	PCINT3	= 3	; Pin Change Enable Mask Bit 3
+                                 .equ	PCINT4	= 4	; Pin Change Enable Mask Bit 4
+                                 .equ	PCINT5	= 5	; Pin Change Enable Mask Bit 5
+                                 
+                                 
+                                 ; ***** TIMER_COUNTER_0 **************
+                                 ; TIMSK0 - Timer/Counter0 Interrupt Mask Register
+                                 .equ	TOIE0	= 1	; Timer/Counter0 Overflow Interrupt Enable
+                                 .equ	OCIE0A	= 2	; Timer/Counter0 Output Compare Match A Interrupt Enable
+                                 .equ	OCIE0B	= 3	; Timer/Counter0 Output Compare Match B Interrupt Enable
+                                 
+                                 ; TIFR0 - Timer/Counter0 Interrupt Flag register
+                                 .equ	TOV0	= 1	; Timer/Counter0 Overflow Flag
+                                 .equ	OCF0A	= 2	; Timer/Counter0 Output Compare Flag 0A
+                                 .equ	OCF0B	= 3	; Timer/Counter0 Output Compare Flag 0B
+                                 
+                                 ; OCR0A - Timer/Counter0 Output Compare Register
+                                 .equ	OCR0A_0	= 0	; 
+                                 .equ	OCR0A_1	= 1	; 
+                                 .equ	OCR0A_2	= 2	; 
+                                 .equ	OCR0A_3	= 3	; 
+                                 .equ	OCR0A_4	= 4	; 
+                                 .equ	OCR0A_5	= 5	; 
+                                 .equ	OCR0A_6	= 6	; 
+                                 .equ	OCR0A_7	= 7	; 
+                                 
+                                 ; TCCR0A - Timer/Counter  Control Register A
+                                 .equ	WGM00	= 0	; Waveform Generation Mode
+                                 .equ	WGM01	= 1	; Waveform Generation Mode
+                                 .equ	COM0B0	= 4	; Compare Match Output B Mode
+                                 .equ	COM0B1	= 5	; Compare Match Output B Mode
+                                 .equ	COM0A0	= 6	; Compare Match Output A Mode
+                                 .equ	COM0A1	= 7	; Compare Match Output A Mode
+                                 
+                                 ; TCNT0 - Timer/Counter0
+                                 .equ	TCNT0_0	= 0	; 
+                                 .equ	TCNT0_1	= 1	; 
+                                 .equ	TCNT0_2	= 2	; 
+                                 .equ	TCNT0_3	= 3	; 
+                                 .equ	TCNT0_4	= 4	; 
+                                 .equ	TCNT0_5	= 5	; 
+                                 .equ	TCNT0_6	= 6	; 
+                                 .equ	TCNT0_7	= 7	; 
+                                 
+                                 ; TCCR0B - Timer/Counter Control Register B
+                                 .equ	CS00	= 0	; Clock Select
+                                 .equ	CS01	= 1	; Clock Select
+                                 .equ	CS02	= 2	; Clock Select
+                                 .equ	WGM02	= 3	; Waveform Generation Mode
+                                 .equ	FOC0B	= 6	; Force Output Compare B
+                                 .equ	FOC0A	= 7	; Force Output Compare A
+                                 
+                                 ; OCR0B - Timer/Counter0 Output Compare Register
+                                 .equ	OCR0B_0	= 0	; 
+                                 .equ	OCR0B_1	= 1	; 
+                                 .equ	OCR0B_2	= 2	; 
+                                 .equ	OCR0B_3	= 3	; 
+                                 .equ	OCR0B_4	= 4	; 
+                                 .equ	OCR0B_5	= 5	; 
+                                 .equ	OCR0B_6	= 6	; 
+                                 .equ	OCR0B_7	= 7	; 
+                                 
+                                 ; GTCCR - General Timer Conuter Register
+                                 .equ	PSR10	= 0	; Prescaler Reset Timer/Counter0
+                                 .equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                                 
+                                 
+                                 ; ***** WATCHDOG *********************
+                                 ; WDTCR - Watchdog Timer Control Register
+                                 .equ	WDP0	= 0	; Watch Dog Timer Prescaler bit 0
+                                 .equ	WDP1	= 1	; Watch Dog Timer Prescaler bit 1
+                                 .equ	WDP2	= 2	; Watch Dog Timer Prescaler bit 2
+                                 .equ	WDE	= 3	; Watch Dog Enable
+                                 .equ	WDCE	= 4	; Watchdog Change Enable
+                                 .equ	WDP3	= 5	; Watchdog Timer Prescaler Bit 3
+                                 .equ	WDTIE	= 6	; Watchdog Timeout Interrupt Enable
+                                 .equ	WDTIF	= 7	; Watchdog Timeout Interrupt Flag
+                                 
+                                 
+                                 ; ***** CPU **************************
+                                 ; SREG - Status Register
+                                 .equ	SREG_C	= 0	; Carry Flag
+                                 .equ	SREG_Z	= 1	; Zero Flag
+                                 .equ	SREG_N	= 2	; Negative Flag
+                                 .equ	SREG_V	= 3	; Two's Complement Overflow Flag
+                                 .equ	SREG_S	= 4	; Sign Bit
+                                 .equ	SREG_H	= 5	; Half Carry Flag
+                                 .equ	SREG_T	= 6	; Bit Copy Storage
+                                 .equ	SREG_I	= 7	; Global Interrupt Enable
+                                 
+                                 ; SPL - Stack Pointer Low Byte
+                                 .equ	SP0	= 0	; Stack Pointer Bit 0
+                                 .equ	SP1	= 1	; Stack Pointer Bit 1
+                                 .equ	SP2	= 2	; Stack Pointer Bit 2
+                                 .equ	SP3	= 3	; Stack Pointer Bit 3
+                                 .equ	SP4	= 4	; Stack Pointer Bit 4
+                                 .equ	SP5	= 5	; Stack Pointer Bit 5
+                                 .equ	SP6	= 6	; Stack Pointer Bit 6
+                                 .equ	SP7	= 7	; Stack Pointer Bit 7
+                                 
+                                 ; MCUCR - MCU Control Register
+                                 ;.equ	ISC00	= 0	; Interrupt Sense Control 0 bit 0
+                                 ;.equ	ISC01	= 1	; Interrupt Sense Control 0 bit 1
+                                 .equ	SM0	= 3	; Sleep Mode Select Bit 0
+                                 .equ	SM1	= 4	; Sleep Mode Select Bit 1
+                                 .equ	SE	= 5	; Sleep Enable
+                                 .equ	PUD	= 6	; Pull-up Disable
+                                 
+                                 ; MCUSR - MCU Status register
+                                 .equ	PORF	= 0	; Power-On Reset Flag
+                                 .equ	EXTRF	= 1	; External Reset Flag
+                                 .equ	BORF	= 2	; Brown-out Reset Flag
+                                 .equ	WDRF	= 3	; Watchdog Reset Flag
+                                 
+                                 ; OSCCAL - Oscillator Calibration Register
+                                 .equ	CAL0	= 0	; Oscillatro Calibration Value Bit 0
+                                 .equ	CAL1	= 1	; Oscillatro Calibration Value Bit 1
+                                 .equ	CAL2	= 2	; Oscillatro Calibration Value Bit 2
+                                 .equ	CAL3	= 3	; Oscillatro Calibration Value Bit 3
+                                 .equ	CAL4	= 4	; Oscillatro Calibration Value Bit 4
+                                 .equ	CAL5	= 5	; Oscillatro Calibration Value Bit 5
+                                 .equ	CAL6	= 6	; Oscillatro Calibration Value Bit 6
+                                 
+                                 ; CLKPR - Clock Prescale Register
+                                 .equ	CLKPS0	= 0	; Clock Prescaler Select Bit 0
+                                 .equ	CLKPS1	= 1	; Clock Prescaler Select Bit 1
+                                 .equ	CLKPS2	= 2	; Clock Prescaler Select Bit 2
+                                 .equ	CLKPS3	= 3	; Clock Prescaler Select Bit 3
+                                 .equ	CLKPCE	= 7	; Clock Prescaler Change Enable
+                                 
+                                 ; DWDR - Debug Wire Data Register
+                                 .equ	DWDR0	= 0	; Debug Wire Data Register Bit 0
+                                 .equ	DWDR1	= 1	; Debug Wire Data Register Bit 1
+                                 .equ	DWDR2	= 2	; Debug Wire Data Register Bit 2
+                                 .equ	DWDR3	= 3	; Debug Wire Data Register Bit 3
+                                 .equ	DWDR4	= 4	; Debug Wire Data Register Bit 4
+                                 .equ	DWDR5	= 5	; Debug Wire Data Register Bit 5
+                                 .equ	DWDR6	= 6	; Debug Wire Data Register Bit 6
+                                 .equ	DWDR7	= 7	; Debug Wire Data Register Bit 7
+                                 
+                                 ; SPMCSR - Store Program Memory Control and Status Register
+                                 .equ	SPMEN	= 0	; Store program Memory Enable
+                                 .equ	PGERS	= 1	; Page Erase
+                                 .equ	PGWRT	= 2	; Page Write
+                                 .equ	RFLB	= 3	; Read Fuse and Lock Bits
+                                 .equ	CTPB	= 4	; Clear Temporary Page Buffer
+                                 
+                                 ; PRR - Power Reduction Register
+                                 .equ	PRADC	= 0	; Power Reduction ADC
+                                 .equ	PRTIM0	= 1	; Power Reduction Timer/Counter0
+                                 
+                                 ; BODCR - BOD Control Register
+                                 .equ	BPDSE	= 0	; BOD Power-Down Sleep Enable
+                                 .equ	BPDS	= 1	; BOD Power-Down in Power-Down Sleep
+                                 
+                                 
+                                 
+                                 ; ***** LOCKSBITS ********************************************************
+                                 .equ	LB1	= 0	; Lockbit
+                                 .equ	LB2	= 1	; Lockbit
+                                 
+                                 
+                                 ; ***** FUSES ************************************************************
+                                 ; LOW fuse bits
+                                 .equ	CKSEL0	= 0	; Select Clock Source
+                                 .equ	CKSEL1	= 1	; Select Clock Source
+                                 .equ	SUT0	= 2	; Select start-up time
+                                 .equ	SUT1	= 3	; Select start-up time
+                                 .equ	CKDIV8	= 4	; Start up with system clock divided by 8
+                                 .equ	WDTON	= 5	; Watch dog timer always on
+                                 .equ	EESAVE	= 6	; Keep EEprom contents during chip erase
+                                 .equ	SPIEN	= 7	; SPI programming enable
+                                 
+                                 ; HIGH fuse bits
+                                 .equ	RSTDISBL	= 0	; Disable external reset
+                                 .equ	BODLEVEL0	= 1	; Enable BOD and select level
+                                 .equ	BODLEVEL1	= 2	; Enable BOD and select level
+                                 .equ	DWEN	= 3	; DebugWire Enable
+                                 .equ	SELFPRGEN	= 4	; Self Programming Enable
+                                 
+                                 
+                                 
+                                 ; ***** CPU REGISTER DEFINITIONS *****************************************
+                                 .def	XH	= r27
+                                 .def	XL	= r26
+                                 .def	YH	= r29
+                                 .def	YL	= r28
+                                 .def	ZH	= r31
+                                 .def	ZL	= r30
+                                 
+                                 
+                                 
+                                 ; ***** DATA MEMORY DECLARATIONS *****************************************
+                                 .equ	FLASHEND	= 0x01ff	; Note: Word address
+                                 .equ	IOEND	= 0x003f
+                                 .equ	SRAM_START	= 0x0060
+                                 .equ	SRAM_SIZE	= 64
+                                 .equ	RAMEND	= 0x009f
+                                 .equ	XRAMEND	= 0x0000
+                                 .equ	E2END	= 0x003f
+                                 .equ	EEPROMEND	= 0x003f
+                                 .equ	EEADRBITS	= 6
+                                 #pragma AVRPART MEMORY PROG_FLASH 1024
+                                 #pragma AVRPART MEMORY EEPROM 64
+                                 #pragma AVRPART MEMORY INT_SRAM SIZE 64
+                                 #pragma AVRPART MEMORY INT_SRAM START_ADDR 0x60
+                                 
+                                 
+                                 
+                                 ; ***** BOOTLOADER DECLARATIONS ******************************************
+                                 .equ	PAGESIZE	= 16
+                                 
+                                 
+                                 
+                                 ; ***** INTERRUPT VECTORS ************************************************
+                                 .equ	INT0addr	= 0x0001	; External Interrupt 0
+                                 .equ	PCI0addr	= 0x0002	; External Interrupt Request 0
+                                 .equ	OVF0addr	= 0x0003	; Timer/Counter0 Overflow
+                                 .equ	ERDYaddr	= 0x0004	; EEPROM Ready
+                                 .equ	ACIaddr	= 0x0005	; Analog Comparator
+                                 .equ	OC0Aaddr	= 0x0006	; Timer/Counter Compare Match A
+                                 .equ	OC0Baddr	= 0x0007	; Timer/Counter Compare Match B
+                                 .equ	WDTaddr	= 0x0008	; Watchdog Time-out
+                                 .equ	ADCCaddr	= 0x0009	; ADC Conversion Complete
+                                 
+                                 .equ	INT_VECTORS_SIZE	= 10	; size in words
+                                 
+                                 #endif  /* _TN13ADEF_INC_ */
+                                 
+                                 ; ***** END OF FILE ******************************************************
+                                 
+                                 ;	ldi R16,Byte1(Number) ; the lowest 8 bits into register 16
+                                 ;;	ldi R17,Byte2(Number) ; Bits 9 to 16 into register 17
+                                 ;	ldi R18,Byte3(Number) ; Bits 17 to 24 into register 18
+                                 ;	ldi R19,Byte4(Number) ; Bits 25 to 32 into register 19
+                                 
+                                 ;Nothing with jumping and branching around, as simple as this. This works with numbers of any size, here we add a four-byte number in R19:R18:R17:R16 with a two-byte number in R21:R20:
+                                 ;
+                                 ;	ADD R16,R20 ; Add the lowest byte, result to R16
+                                 ;	ADC R17,R21 ; Add the next higher byte and carry, result to R17
+                                 ;	LDI R20,0 ; Write a zero to R20 (do not use CLR, which clears carry!)
+                                 ;	ADC R18,R20 ; Add zero and carry, result to R18
+                                 ;	ADC R19,R20 ; Add zero and carry, result to R19
+                                 ; Program for attiny13A PRESSURE GUAGE with Hitachi 1602LCD and I2C back pack
+                                 ;uses pressure sensor from 0-300 psi range
+                                 ;Project compiled by Sajeev Sankaran ,Thodupuzha,Kerala
+                                 ;thanks for danni from AVR freaks for the binary to ASCII routine 
+                                 ;Thanks to Kodera2t for I2C routine 
+                                 ;thanks to Donald Weiman    (weimandn@alfredstate.edu) for delay routines
+                                 ;
+                                 .equ    fclk    = 1000000		; system clock frequency (for delays) 
+                                 .DEF ANSL = R0            		;To hold low-byte of answer     
+                                 .DEF ANSH = R1            		;To hold high-byte of answer
+                                 .DEF    A = R12           		;To hold multiplicand
+                                 .DEF    B = R11           		;To hold multiplier
+                                 .DEF    C = R10           		;To hold bit counter
+                                 .DEF nibble1 = R25  			;register to store data nibble
+                                 .DEF command1 = R22
+                                 .DEF command2 = R23
+                                 .DEF command3 = R24
+                                 .DEF command4 = R15
+                                 .DEF command5 = R14
+                                 .DEF command6 = R13
+                                 .DEF loader = R26
+                                 .def temp = R19
+                                 .def data = R16
+                                 .def cnt = R17
+                                 .def cnt2 = R18
+                                 ;.def display = R25
+                                 .def temp1 = R20
+                                 .def temp2 = R21
+                                 .def free1 = R9
+                                 .def free2 = R8
+                                 .equ count_start = 0x04
+                                 .equ count_end = 0x01
+                                 .equ subnum = 0x01
+                                 .equ	SUB_COUNT	= 0x04
+                                 .equ long_delay =0xFF
+                                 .equ data_command1 = 0b00001001		; data control nibble ,led on P3, EN 0 on P2, R/W 0 (write) in P1 , RS 1 (0 instruction, 1 data) = 1001  =0x09
+                                 .equ data_command2 = 0b00001101		; data control nibble , 1101  = 0x0D   - EN goes hi=1
+                                 .equ data_command3 = 0b00001001		; data control nibble , 1001  = 0x09   - EN goes low=0
+                                 .equ inst_command1 = 0b00001000		;instruction control nibble ,  led on en-lo,Rw-0,rs =0   = 1000   = 0x08
+                                 .equ inst_command2 = 0b00001100		;instruction control nibble ,  led on,EN hi , rs/RW 0    = 1100   = 0x0C
+                                 .equ inst_command3 = 0b00001000		;instruction control nibble  , led on, EN lo ,rs/rw 0    = 1000   = 0x08
+                                 .equ slave_address = 0b01001110		;0x4E 
+                                 
+                                 
+                                 
+                                 ; PB0: SDA, PB1: SCL, PB2:A/D input
+                                 
+                                 setup:
+                                 ; Init stack for subroutines
+000000 e9af                      	ldi loader,LOW(RAMEND) 			; Init stack
+000001 bfad                      	out SPL,loader        			; to stack pointer
+                                 
+000002 e068                      	ldi command1,inst_command1		;lower nibble is I2c command  led on en,Rw,rs =0
+000003 e07c                      	ldi command2,inst_command2		;lower nibble led on,EN hi , rs/RW 0
+000004 e088                      	ldi command3,inst_command3		;loer nibble  led on, EN lo ,rs/rw 0
+000005 e0a9                      	ldi loader,data_command1
+000006 2efa                      	mov command4,loader
+000007 e0ad                      	ldi loader,data_command2
+000008 2eea                      	mov command5,loader
+000009 e0a9                      	ldi loader,data_command3
+00000a 2eda                      	mov command6,loader
+                                 ; delay timer for upto 65 seconds (for main loop operations)----- use command "rcall delayYx1mS" for delay as per enetred value in the brakets in millisecs.
+                                 
+                                 	;ldi YL, low(1000)			;enter desired milliseconds(ms) for the delay needed in the (.......),used for delay in the range of seconds
+                                 	;ldi YH, high(1000)			;enter desired milliseconds(ms) for the delay needed in the (.......),used for delay in the range of seconds
+                                 
+                                 ; PB0 (SDA) and PB1 (SCL) are tristated for hi and DDR is changed to output for low on I2C bus
+                                 
+00000b e0a0                      	ldi loader, 0b00
+00000c bba7                      	out DDRB, loader				;pb0 & pb1 is now input 
+00000d bba8                      	out portb,loader				;pb0 & pb1 is now tristated , both i2c lines are pulled up by ext resitors to hi
+                                 
+                                 ; initially, SDA and SCL are high
+                                 	
+00000e d13a                      	rcall lcd_init      			; LCD initialize as per hitachi data sheet HD44780
+                                 
+                                 
+                                 ; starting A/D converter, free running mode
+                                 	;ldi	temp1, ((1<<ADEN)+(1<<ADSC)+(1<<ADATE)+(1<<ADIE)+(0<<ADIF)+(1<<ADPS2)+(0<<ADPS1)+(1<<ADPS2))
+00000f efa5                      	ldi loader,0b11110101
+000010 b9a6                      	out   ADCSRA,loader
+000011 e0a0                      	ldi loader, 0x00
+000012 b9a3                      	out ADCSRB, loader
+                                 ; selecting PB2 for A/D input
+000013 e0a2                      	ldi	loader, (1<<MUX1)+(0<<MUX0)+(0<<ADLAR)       ; adc2,PB4  , adc result left adjusted
+000014 b9a7                      	out   ADMUX,loader
+000015 e1a0                      	ldi	loader, 1<<ADC2D
+000016 bba4                      	out	DIDR0, loader
+000017 e035                      	ldi temp ,5
+000018 d188                      	rcall delayTx1uS
+                                 
+                                 main: 	
+                                 
+                                 ; reading A/D result in free1
+000019 b094                      	in free1,ADCL
+00001a b085                      	in free2,ADCH
+00001b 2da9                      	mov loader, free1
+                                 
+                                 ;ADCL should be right adjusted.ADLAR=0 ,low in ADCL and high bit in ADCH total 10 bit
+00001c e0a0                      	ldi loader,0
+00001d 2e5a                      	mov r5,loader		;r5 is used to count upto 32 for 32 read averaging from ADC
+                                 addroutine:
+00001e b094                      	in free1,ADCL
+00001f b085                      	in free2,ADCH
+                                 ;add routine	
+000020 0c09                      	add r0,free1
+000021 1c18                      	adc r1,free2
+000022 e0a0                      	ldi loader,0
+000023 2e9a                      	mov free1,loader
+000024 1c29                      	adc r2,free1
+000025 1c39                      	adc r3,free1
+                                 
+000026 e2a0                      	ldi loader,32
+000027 9453                      	inc r5             ; increases the counter 0-32 to add 32 adc values for averaging
+000028 165a                      	cp r5,loader          ;  compares counter reached 32
+000029 f7a1                      	brne addroutine    ; if not 32 loop back to another add of ADC result
+00002a e0a0                      	ldi loader,0	   ; if 32 counts reached 0 loaded into R5 for next average cycle
+00002b 2e5a                      	mov r5,loader
+                                 	
+                                 
+                                 
+                                 
+                                 
+                                 wipeclear:
+                                 	
+00002c e0a5                      	ldi loader,5     ;32 added results need to be bit shifted right for division by 32
+                                 
+                                 loop1:
+                                 	
+00002d 95aa                      	dec loader       ; decrease counter till 0 from 5
+00002e 9436                      	LSR r3
+00002f 9427                      	ror r2
+000030 9417                      	ror r1
+000031 9407                      	ror r0
+000032 30a0                      	cpi loader,0
+000033 f7c9                      	brne loop1        ; loops 5 times for division by 32
+                                 
+000034 930f                      	push r16
+000035 931f                      	push r17
+000036 932f                      	push r18
+000037 933f                      	push r19
+000038 934f                      	push r20
+000039 935f                      	push r21
+00003a 93bf                      	push r27
+00003b 936f                      	push r22
+00003c 937f                      	push r23
+00003d 938f                      	push r24
+00003e 939f                      	push r25
+                                 
+00003f e18d                      	ldi r24,29
+000040 d168                      	rcall multiplication
+000041 2f62                      	mov r22,r18
+000042 2f73                      	mov r23,r19
+000043 e083                      	ldi r24,3
+000044 d164                      	rcall multiplication
+000045 e0a3                      	ldi loader,3
+                                 loop2:
+                                 	
+000046 95aa                      	dec loader
+000047 9536                      	lsr r19
+000048 9527                      	ror r18
+000049 30a0                      	cpi loader,0
+00004a f7d9                      	brne loop2
+00004b 0f62                              add r22,r18
+00004c 1f73                      	adc r23,r19
+                                 			;averaged and calculated pressure value in R23:R22
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;.def    a0              = r0 = ANSL = R22
+                                 ;.def    a1              = r1 = ANSH = R23
+                                 ;.def    a2              = r12 = A   = R16
+                                 ;.def    a3              = r11 = B   = R17
+                                 ;.def    a4              = r10 = C   = R18
+                                 ;************************************************************************
+                                 ;*                                                                      *
+                                 ;*                      binary to ASCII decimal conversion              *
+                                 ;*                                                                      *
+                                 ;************************************************************************
+                                 ;input: a1, a0 = 16 bit value 0 ... 65535
+                                 ;output: a4, a3, a2, a1, a0 = digits
+                                 ;cycle: 27 .. 183
+                                 ;bytes: 42
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 binbcd:
+00004d e22f                      	ldi r18,-1 + '0'
+                                         ;mov     C, loader       ;0x2F  = -1 decimal + ascii 0 (decimal 48 or 0x30)  decimal 47 or 0x2F
+00004e 9523                      _bib1:  inc     r18					; times operation done
+00004f 5160                              subi    r22, low(10000)
+000050 4277                              sbci    r23, high(10000)    ; if carry flag set
+000051 f7e0                              brcc    _bib1				; branch if carry flag clear till-ve operation (original value less than 10000)
+                                 
+000052 e31a                      	ldi r17,10 + '0'
+                                         ;ldi     B, loader        ;0x3A  , 10 decimal + ascii 0=46 in hex a+30 =3A  = decimal 58
+000053 951a                      _bib2:  dec     r17					; decrease one count from 58 to reach 48
+000054 5168                              subi    r22, low(-1000)		; subtract with -1000 decimal (adds 1000)
+000055 4f7c                              sbci    r23, high(-1000)		; adds 1000 till carry is set
+000056 f3e0                              brcs    _bib2				; branch if carry set
+                                 
+000057 e20f                      	ldi r16, -1 + '0'
+                                         ;mov     A, loader		;0x2F  = -1 decimal + ascii 0 (decimal 48 or 0x30)  decimal 47 or 0x2F
+000058 9503                      _bib3:  inc     r16					;times operation done
+000059 5664                              subi    r22, low(100)		;
+00005a 4070                              sbci    r23, high(100)		;subtract 100 till carry flag is set indicating negative number
+00005b f7e0                              brcc    _bib3				;branch if carry flag clear
+                                 	
+00005c e3aa                      	ldi loader, 10 + '0'
+00005d 2f7a                              mov     r23, loader		;0x3A  , 10 decimal + ascii 0=46 in hex a+30 =3A  = decimal 58
+00005e 957a                      _bib4:  dec     r23
+00005f 5f66                              subi    r22, -10
+000060 f3e8                              brcs    _bib4
+                                 
+000061 5d60                              subi    r22, -'0'
+                                         ;ret	
+                                 
+000062 2e06                      mov r0,r22
+000063 2e17                      mov r1,r23
+000064 2e20                      mov r2,r16
+000065 2e31                      mov r3,r17
+000066 2e42                      mov r4,r18
+                                 
+000067 919f                      pop r25
+000068 918f                      pop r24
+000069 917f                      pop r23
+00006a 916f                      pop r22
+00006b 91bf                      pop r27
+00006c 915f                      pop r21
+00006d 914f                      pop r20
+00006e 913f                      pop r19
+00006f 912f                      pop r18
+000070 911f                      pop r17
+000071 910f                      pop r16	
+                                 
+                                 	
+                                 
+                                 
+000072 eca0                      	ldi loader,0b11000000			;0b1100_000 ; (0xC0) second line,first digit  ,DDRAM address as per data sheet is 0x47 (1000000)+ 10000000 is the DDRAM control code = 0b11000000
+000073 2f9a                      	mov nibble1,loader                 	;loads info in loader to nibble register for AND,OR,SWAP etc to write data
+000074 d076                      	rcall nibble_write_instruction		;calls LCD instruction/command write subroutine
+                                 
+000075 2da4                      	mov loader,r4				;10000 position ASCII value
+000076 2f9a                      	mov nibble1,loader
+000077 d0a2                      	rcall nibble_write_data				;calls LCD data write subroutine
+                                 
+                                 	
+                                 
+000078 2da3                      	mov loader,r3				;1000 position ASCII value
+000079 2f9a                      	mov nibble1,loader
+00007a d09f                      	rcall nibble_write_data
+                                 
+                                 
+                                 
+00007b 2da2                      	mov loader,r2				;100 position ASCII value
+00007c 2f9a                      	mov nibble1,loader
+00007d d09c                      	rcall nibble_write_data
+                                 
+                                 	
+00007e e2ae                      	ldi loader,0b00101110			;decimal symbol
+00007f 2f9a                      	mov nibble1,loader
+000080 d099                      	rcall nibble_write_data
+                                 
+                                 
+000081 2da1                      	mov loader,r1				;10 position ASCII value
+000082 2f9a                      	mov nibble1,loader
+000083 d096                      	rcall nibble_write_data
+                                 
+                                 
+                                 
+000084 2da0                      	mov loader,r0				;1 position ASCII value
+000085 2f9a                      	mov nibble1,loader
+000086 d093                      	rcall nibble_write_data
+                                 
+                                 
+000087 eca8                      	ldi loader,0b11001000			;load DDRAM address C8 (8th position)
+000088 2f9a                      	mov nibble1,loader
+000089 d061                      	rcall nibble_write_instruction
+                                 
+                                 
+00008a e5a0                      	ldi loader, 0b01010000			;ASCII for P
+00008b 2f9a                      	mov nibble1,loader
+00008c d08d                      	rcall nibble_write_data
+                                 
+00008d e5a3                      	ldi loader,0b01010011			;ASCII for S
+00008e 2f9a                      	mov nibble1,loader
+00008f d08a                      	rcall nibble_write_data
+                                 
+000090 e4a9                      	ldi loader,0b01001001			;ASCII for I
+000091 2f9a                      	mov nibble1,loader
+000092 d087                      	rcall nibble_write_data
+                                 
+                                 
+000093 2400                          clr r0
+000094 2411                      	clr r1
+000095 2422                      	clr r2
+000096 2433                      	clr r3
+                                 	
+000097 cf81                       	rjmp main
+                                 
+                                 
+                                 
+                                 start:
+000098 e041                      	ldi temp1, 0b01       			;scl 1 , sda 0
+000099 bb47                      	out ddrb, temp1
+00009a d10a                      	rcall delay10uS
+00009b e043                      	ldi temp1, 0b11				;scl 0 , sda 0
+00009c bb47                      	out ddrb, temp1
+00009d d107                      	rcall delay10uS
+00009e 9508                      	ret
+                                 	;cl, da
+                                 		
+                                 ends:
+00009f e043                      	ldi temp1,0b11				;both scl & sda pulled low so as next step ensures a low to hi transition of SDA for stop
+0000a0 bb47                      	out ddrb, temp1				; scl 0 , sda 0
+0000a1 d103                      	rcall delay10uS
+0000a2 e041                      	ldi temp1,0b01				;scl 1 ,sda 0
+0000a3 bb47                      	out ddrb, temp1				;while scl is hi ,sda is low , next step sda will go hi creating a stop condition
+0000a4 d100                      	rcall delay10uS
+0000a5 e040                      	ldi temp1,0b00				;scl 1 . sda 1
+0000a6 bb47                      	out ddrb, temp1				;sda reached hi from low in the previous step
+0000a7 d0fd                      	rcall delay10uS	
+0000a8 9508                      	ret
+                                 
+                                 init:
+0000a9 e040                      	ldi temp1, 0b00 			; 
+0000aa bb47                      	out ddrb,temp1				; data direction set as input = SCL & SDA now hi
+0000ab bb48                      	out PORTB, temp1			; ports also loaded with 0 , Zstate
+0000ac d0f8                      	rcall delay10uS
+0000ad 9508                      	ret
+                                 	;cl da
+                                 bit_high:
+0000ae e043                      	ldi temp1, 0b11    			; scl 0 ,sda 0
+0000af bb47                      	out ddrb, temp1				; writing 1 to ddr will make it output and alreday port is 0 so SDA & SCL is pulled low
+0000b0 d0f4                      	rcall delay10uS
+0000b1 e042                      	ldi temp1, 0b10				; scl 0 ,sda 1
+0000b2 bb47                      	out ddrb, temp1
+0000b3 d0f1                      	rcall delay10uS
+0000b4 e040                      	ldi temp1, 0b00				;scl 1 , sda 1
+0000b5 bb47                      	out ddrb, temp1
+0000b6 d0ee                      	rcall delay10uS
+0000b7 e042                      	ldi temp1, 0b10				; scl 0 , sda 1
+0000b8 bb47                      	out ddrb, temp1
+0000b9 d0eb                      	rcall delay10uS
+0000ba e043                      	ldi temp1, 0b11				; scl 0 ,sda 0
+0000bb bb47                      	out ddrb, temp1
+0000bc d0e8                      	rcall delay10uS
+0000bd 9508                      	ret
+                                 	;cl=1 da=0
+                                 	
+                                 bit_low:
+0000be e043                      	ldi temp1, 0b11				;scl 0 ,sda 0
+0000bf bb47                      	out ddrb, temp1
+0000c0 d0e4                      	rcall delay10uS
+0000c1 e043                      	ldi temp1, 0b11				;scl 0 , sda 0
+0000c2 bb47                      	out ddrb, temp1
+0000c3 d0e1                      	rcall delay10uS
+0000c4 e041                      	ldi temp1, 0b01				; scl 1 , sda 0
+0000c5 bb47                      	out ddrb, temp1
+0000c6 d0de                      	rcall delay10uS
+0000c7 e043                      	ldi temp1, 0b11				; scl 0 , sda 0
+0000c8 bb47                      	out ddrb, temp1
+0000c9 d0db                      	rcall delay10uS
+0000ca e043                      	ldi temp1, 0b11				; scl 0 , sda 0
+0000cb bb47                      	out ddrb, temp1
+0000cc d0d8                      	rcall delay10uS
+0000cd 9508                      	ret
+                                 	;cl da
+                                 
+                                 ack:
+0000ce e042                      	ldi temp1, 0b10    			; scl 0 , sda 1
+0000cf bb47                      	out ddrb,temp1
+                                 ;recheck:	
+                                 	;sbic pinb,pinb0			; if pinb0 is 0 then slave ACKed
+                                 	;rjmp recheck				; if pinb0 is 1 wait for ACK
+0000d0 d0d4                      	rcall delay10uS
+0000d1 e040                      	ldi temp1, 0b00				; scl 1, sda 1 ( if ACK sda will become 0 when slave pulls low)
+0000d2 bb47                      	out ddrb, temp1
+0000d3 d0d1                      	rcall delay10uS
+0000d4 e042                      	ldi temp1, 0b10
+0000d5 bb47                      	out ddrb, temp1
+0000d6 d0ce                      	rcall delay10uS
+0000d7 e043                      	ldi temp1, 0b11				; scl 0 , sda 0 
+0000d8 bb47                      	out ddrb, temp1
+0000d9 d0cb                      	rcall delay10uS
+0000da 9508                      	ret
+                                 	
+                                 	
+                                 
+                                 ; writing data is stored in data
+                                 writedata:
+0000db e010                      	ldi cnt,0x00
+0000dc e022                      	ldi cnt2,0x02
+                                 rep:
+0000dd 2f50                      	mov temp2, data
+0000de 7850                      	andi temp2,0b10000000
+0000df 3850                      	cpi temp2, 0b10000000
+0000e0 f011                      	breq highbit
+0000e1 dfdc                      	rcall bit_low
+0000e2 c001                      	rjmp sendend
+                                 highbit:
+0000e3 dfca                      	rcall bit_high
+                                 sendend:
+0000e4 0f00                      	lsl data
+0000e5 9513                      	inc cnt
+0000e6 3018                      	cpi cnt,8
+0000e7 f7a9                      	brne rep
+0000e8 e042                      	ldi temp1, 0b10				; scl 0 , sda 1 ( sda released for slave to send ACK)
+0000e9 bb47                      	out ddrb, temp1
+0000ea 9508                      	ret
+                                 
+                                 nibble_write_instruction:
+0000eb dfbd                      	rcall init
+0000ec dfab                      	rcall start
+0000ed e40e                      	ldi data,slave_address
+0000ee dfec                      	rcall writedata
+0000ef dfde                      	rcall ack
+0000f0 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+0000f1 2b96                      	OR nibble1,command1
+0000f2 2f09                      	mov data,nibble1
+0000f3 dfe7                      	rcall writedata
+0000f4 dfd9                      	rcall ack
+0000f5 2f9a                      	mov nibble1,loader             	;copies data for upper nibble operation
+0000f6 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+0000f7 2b97                      	OR nibble1,command2
+0000f8 2f09                      	mov data,nibble1
+0000f9 dfe1                      	rcall writedata
+0000fa dfd3                      	rcall ack
+0000fb 2f9a                      	mov nibble1,loader             	;copies data for upper nibble operation
+0000fc 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+0000fd 2b98                      	OR nibble1,command3
+0000fe 2f09                      	mov data,nibble1
+0000ff dfdb                      	rcall writedata
+000100 dfcd                      	rcall ack
+000101 2f9a                      	mov nibble1,loader
+000102 9592                      	swap nibble1                    ;previous lower nibble is swapped to high nibble position
+000103 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+000104 2b96                      	OR nibble1,command1
+000105 2f09                      	mov data,nibble1
+000106 dfd4                      	rcall writedata
+000107 dfc6                      	rcall ack
+000108 2f9a                      	mov nibble1,loader            	;copies data for upper nibble operation
+000109 9592                      	swap nibble1                    ;previous lower nibble is swapped to high nibble position
+00010a 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+00010b 2b97                      	OR nibble1,command2
+00010c 2f09                      	mov data,nibble1
+00010d dfcd                      	rcall writedata
+00010e dfbf                      	rcall ack
+00010f 2f9a                      	mov nibble1,loader
+000110 9592                      	swap nibble1                    ;previous lower nibble is swapped to high nibble position
+000111 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+000112 2b98                      	OR nibble1,command3
+000113 2f09                      	mov data,nibble1
+000114 dfc6                      	rcall writedata
+000115 dfb8                      	rcall ack
+000116 df88                      	rcall ends
+000117 e134                      	ldi temp,20
+000118 d07b                       	rcall delayTx1mS
+000119 9508                      	ret
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 nibble_write_data:
+00011a df8e                      	rcall init
+00011b df7c                      	rcall start
+00011c e40e                      	ldi data,slave_address
+00011d dfbd                      	rcall writedata
+00011e dfaf                      	rcall ack
+00011f 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+000120 299f                      	OR nibble1,command4				;adding the upper nibble and LCD commands as lower bits of the 8 bits in write data
+000121 2f09                      	mov data,nibble1
+000122 dfb8                      	rcall writedata
+000123 dfaa                      	rcall ack
+000124 2f9a                      	mov nibble1,loader             	;copies data for upper nibble operation
+000125 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+000126 299e                      	OR nibble1,command5
+000127 2f09                      	mov data,nibble1
+000128 dfb2                      	rcall writedata
+000129 dfa4                      	rcall ack
+00012a 2f9a                      	mov nibble1,loader             	;copies data for upper nibble operation
+00012b 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+00012c 299d                      	OR nibble1,command6
+00012d 2f09                      	mov data,nibble1
+00012e dfac                      	rcall writedata
+00012f df9e                      	rcall ack
+000130 2f9a                      	mov nibble1,loader
+000131 9592                      	swap nibble1                    ;previous lower nibble is swapped to high nibble position
+000132 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+000133 299f                      	OR nibble1,command4
+000134 2f09                      	mov data,nibble1
+000135 dfa5                      	rcall writedata
+000136 df97                      	rcall ack
+000137 2f9a                      	mov nibble1,loader            	;copies data for upper nibble operation
+000138 9592                      	swap nibble1                    ;previous lower nibble is swapped to high nibble position
+000139 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+00013a 299e                      	OR nibble1,command5
+00013b 2f09                      	mov data,nibble1
+00013c df9e                      	rcall writedata
+00013d df90                      	rcall ack
+00013e 2f9a                      	mov nibble1,loader
+00013f 9592                      	swap nibble1                    ;previous lower nibble is swapped to high nibble position
+000140 7f90                      	ANDi nibble1,0XF0               ;upper nibble is preserved in register nibble1
+000141 299d                      	OR nibble1,command6
+000142 2f09                      	mov data,nibble1
+000143 df97                      	rcall writedata
+000144 df89                      	rcall ack
+000145 df59                      	rcall ends
+000146 e035                      	ldi temp,5
+000147 d059                      	rcall delayTx1uS
+000148 9508                      	ret
+                                 
+                                 
+                                 
+                                 	
+                                 
+                                 lcd_init:
+000149 e332                      	ldi temp,50
+00014a d049                      	rcall delayTx1mS      			;50ms delay as part of startup
+                                 	
+00014b df5d                      	rcall init
+00014c df4b                      	rcall start
+00014d e40e                      	ldi data,slave_address         		;0x27 and write bit =0x4E
+00014e df8c                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only during initialization, any 4 bit LCD is done by instruction_write or data_write subroutine after initialisation
+00014f df7e                      	rcall ack
+000150 e30c                      	ldi data,0b00111100         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+000151 df89                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only during initialization, any 4 bit LCD is done by instruction_write or data_write subroutine after initialisation
+000152 df7b                      	rcall ack
+000153 e308                      	ldi data,0b00111000         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+000154 df86                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only during initialization, any 4 bit LCD is done by instruction_write or data_write subroutine after initialisation
+000155 df78                      	rcall ack
+000156 df48                      	rcall ends
+000157 e134                      	ldi temp,20							; value loaded here (20) decides the number of milli seconds in the delay below
+000158 d03b                       	rcall delayTx1mS					;20 milli seconds delay, slightly above hitachi data sheet 
+                                 
+                                 	
+000159 df4f                      	rcall init
+00015a df3d                      	rcall start
+00015b e40e                      	ldi data,slave_address         		;0x27 and write bit =0x4E
+00015c df7e                      	rcall writedata
+00015d df70                      	rcall ack
+00015e e30c                      	ldi data,0b00111100         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+00015f df7b                      	rcall writedata
+000160 df6d                      	rcall ack
+000161 e308                      	ldi data,0b00111000         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+000162 df78                      	rcall writedata
+000163 df6a                      	rcall ack
+000164 df3a                      	rcall ends
+000165 e134                      	ldi temp,20
+000166 d02d                       	rcall delayTx1mS					;20 milli seconds delay, slightly above hitachi data sheet
+                                 	
+                                 	
+                                 	
+000167 df41                      	rcall init
+000168 df2f                      	rcall start
+000169 e40e                      	ldi data,slave_address         		;0x27 and write bit =0x4E
+00016a df70                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only during initialization, any 4 bit LCD is done by instruction_write or data_write subroutine after initialisation
+00016b df62                      	rcall ack
+00016c e30c                      	ldi data,0b00111100         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+00016d df6d                      	rcall writedata
+00016e df5f                      	rcall ack
+00016f e308                      	ldi data,0b00111000         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+000170 df6a                      	rcall writedata
+000171 df5c                      	rcall ack
+000172 df2c                      	rcall ends
+000173 e134                      	ldi temp,20
+000174 d01f                       	rcall delayTx1mS					;20 milli seconds delay, slightly above hitachi data sheet
+                                 
+000175 df33                      	rcall init
+000176 df21                      	rcall start
+000177 e40e                      	ldi data,slave_address         		;0x27 and write bit =0x4E
+000178 df62                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only during initialization , any 4 bit LCD is done by instruction_write or data_write subroutine
+000179 df54                      	rcall ack
+00017a e20c                      	ldi data,0b00101100         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+00017b df5f                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only during initialization , any 4 bit LCD is done by instruction_write or data_write subroutine
+00017c df51                      	rcall ack
+00017d e208                      	ldi data,0b00101000         		;Function set LCD , high nibble 0011 & lower commands led = 1,EN,RW,RS all 0.
+00017e df5c                      	rcall writedata						;writedata subroutine is called to command PCF8574T i2c chip only , any 4 bit LCD is done by instruction_write or data_write subroutine
+00017f df4e                      	rcall ack
+000180 df1e                      	rcall ends
+000181 e134                      	ldi temp,20
+000182 d011                       	rcall delayTx1mS					;20 milli seconds delay, slightly above hitachi data sheet
+                                 
+                                 
+                                 
+                                 	
+                                  
+000183 e2a8                          ldi loader,0b00101000            	; (0x28 4 bit ,2 line ,5x7)Function set LCD ,
+000184 2f9a                      	mov nibble1,loader					;loads info in loader to nibble register for AND,OR,SWAP etc to write data
+000185 df65                      	rcall nibble_write_instruction 		;calls LCD instruction/command write subroutine
+                                 			
+                                 	
+000186 e0ae                      	ldi loader,0b00001110         		;Function set LCD , (0x0C ). DISPLAY ON
+000187 2f9a                      	mov nibble1,loader					;loads info in loader to nibble register for AND,OR,SWAP etc to write data
+000188 df62                      	rcall nibble_write_instruction		;calls LCD instruction/command write subroutine
+                                 
+                                 	
+000189 e0a6                      	ldi loader,0b00000110        		;Function set LCD  (entry mode set 0x06),  ENTRY MODE SET
+00018a 2f9a                      	mov nibble1,loader					;loads info in loader to nibble register for AND,OR,SWAP etc to write data
+00018b df5f                      	rcall nibble_write_instruction		;calls LCD instruction/command write subroutine
+                                 	
+                                 	
+                                 		
+00018c e0a1                      	ldi loader,0b00000001         		;Function set LCD  (clear display 0x01),  CLEAR DISPLAY
+00018d 2f9a                      	mov nibble1,loader					;loads info in loader to nibble register for AND,OR,SWAP etc to write data
+00018e df5c                      	rcall nibble_write_instruction		;calls LCD instruction/command write subroutine
+                                 	
+                                 
+00018f 9508                      	ret
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 ; ============================== Time Delay Subroutines =====================
+                                 ; Name:     delayYx1mS
+                                 ; Purpose:  provide a delay of (YH:YL) x 1 mS
+                                 ; Entry:    (YH:YL) = delay data
+                                 ; Exit:     no parameters
+                                 ; Notes:    the 16-bit register provides for a delay of up to 65.535 Seconds
+                                 ;           requires delay1mS
+                                 
+                                 delayYx1mS:
+000190 d007                          rcall    delay1mS                        ; delay for 1 mS
+000191 9721                          sbiw    YH:YL, 1                        ; update the the delay counter
+000192 f7e9                          brne    delayYx1mS                      ; counter is not zero
+                                 
+                                 ; arrive here when delay counter is zero (total delay period is finished)
+000193 9508                          ret
+                                 ; ---------------------------------------------------------------------------
+                                 ; Name:     delayTx1mS
+                                 ; Purpose:  provide a delay of (temp) x 1 mS
+                                 ; Entry:    (temp) = delay data
+                                 ; Exit:     no parameters
+                                 ; Notes:    the 8-bit register provides for a delay of up to 255 mS
+                                 ;           requires delay1mS
+                                 
+                                 delayTx1mS:
+000194 d003                          rcall    delay1mS                        ; delay for 1 mS
+000195 953a                          dec     temp                            ; update the delay counter
+000196 f7e9                          brne    delayTx1mS                      ; counter is not zero
+                                 
+                                 ; arrive here when delay counter is zero (total delay period is finished)
+000197 9508                          ret
+                                 
+                                 ; ---------------------------------------------------------------------------
+                                 ; Name:     delay1mS
+                                 ; Purpose:  provide a delay of 1 mS
+                                 ; Entry:    no parameters
+                                 ; Exit:     no parameters
+                                 ; Notes:    chews up fclk/1000 clock cycles (including the 'call')
+                                 
+                                 delay1mS:
+000198 93cf                          push    YL                              ; [2] preserve registers
+000199 93df                          push    YH                              ; [2]
+00019a efc5                          ldi     YL, low(((fclk/1000)-18)/4)     ; [1] delay counter              (((fclk/1000)-18)/4)
+00019b e0d0                          ldi     YH, high(((fclk/1000)-18)/4)    ; [1]                            (((fclk/1000)-18)/4)
+                                 
+                                 delay1mS_01:
+00019c 9721                          sbiw    YH:YL, 1                        ; [2] update the the delay counter
+00019d f7f1                          brne    delay1mS_01                     ; [2] delay counter is not zero
+                                 
+                                 ; arrive here when delay counter is zero
+00019e 91df                          pop     YH                              ; [2] restore registers
+00019f 91cf                          pop     YL                              ; [2]
+0001a0 9508                          ret                                     ; [4]
+                                 
+                                 ; ---------------------------------------------------------------------------
+                                 ; Name:     delayTx1uS
+                                 ; Purpose:  provide a delay of (temp) x 1 uS with a 16 MHz clock frequency
+                                 ; Entry:    (temp) = delay data
+                                 ; Exit:     no parameters
+                                 ; Notes:    the 8-bit register provides for a delay of up to 255 uS
+                                 ;           requires delay1uS
+                                 
+                                 delayTx1uS:
+0001a1 d003                          rcall    delay10uS                        ; delay for 1 uS
+0001a2 953a                          dec     temp                            ; decrement the delay counter
+0001a3 f7e9                          brne    delayTx1uS                      ; counter is not zero
+                                 
+                                 ; arrive here when delay counter is zero (total delay period is finished)
+0001a4 9508                          ret
+                                 
+                                 ; ---------------------------------------------------------------------------
+                                 ; Name:     delay10uS
+                                 ; Purpose:  provide a delay of 1 uS with a 16 MHz clock frequency ;MODIFIED TO PROVIDE 10us with 1200000cs chip by Sajeev
+                                 ; Entry:    no parameters
+                                 ; Exit:     no parameters
+                                 ; Notes:    add another push/pop for 20 MHz clock frequency
+                                 
+                                 delay10uS:
+                                     ;push    temp                            ; [2] these instructions do nothing except consume clock cycles
+                                     ;pop     temp                            ; [2]
+                                     ;push    temp                            ; [2]
+                                     ;pop     temp                            ; [2]
+                                     ;ret                                     ; [4]
+0001a5 0000                           nop
+0001a6 0000                           nop
+0001a7 0000                           nop
+0001a8 9508                           ret
+                                 
+                                 ; ============================== End of Time Delay Subroutines ==============
+                                 
+                                 
+                                 multiplication:
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;(5/1023) x (300/5) x ADC count = pressure measured
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;0.293 x ADC count , ADC count x 29 + ADC count x 3 >>>3 gives a corrected value
+                                 	; Numbers in R17:R16 and R21
+                                 ;registers used ,r16,r17,r18,r19,r20,r21,r27
+0001a9 e0a3                      	ldi loader,0x03
+0001aa 221a                      	and r1,loader     ;extract the 2 low bytes from the high register =ADC high bits ADCH
+0001ab 2da1                      	mov loader,r1
+0001ac 2f1a                      	mov r17,loader	  ; hi bit loaded in high side of register pair of multiplicand
+0001ad 2da0                      	mov loader,r0	  ; lo bit of averaged ADC value to low byte of the mulitiplicand register pair
+0001ae 2f0a                      	mov r16,loader	  ; same as above
+0001af 27bb                      	clr r27		  ; r27 is needed to shift the number left, zero at start
+0001b0 2f58                      	mov r21,r24        ; multiplier 0.293 ,29 first then with 3 later and add after bitshift
+0001b1 2744                      	clr R20		  ; result here
+0001b2 2733                      	clr R19		  ; result here
+0001b3 2722                      	clr R18		  ; result here
+                                 
+                                 
+                                 MultLoop:
+0001b4 9556                      	lsr R21 ; shift least significant bit to carry
+0001b5 f418                      	brcc MultWoAdd ; if clear skip adding
+0001b6 0f20                      	add R18,R16 ; Add number to result, lowest byte
+0001b7 1f31                      	adc R19,R17 ; Add number with carry to result, second byte
+0001b8 1f4b                      	adc R20,R27 ; Add number with carry to result, third byte
+                                 MultWoAdd:
+0001b9 0f00                      	lsl R16 ; Shift number left, bit 0 = 0, bit 7 to carry
+0001ba 1f11                      	rol R17 ; Roll left, bit 0 = carry, bit 7 to carry
+0001bb 1fbb                      	rol R27 ; Roll left, bit 0 = carry, bit 7 to carry
+0001bc 2355                      	tst R21 ; Multiplication complete?
+0001bd f7b1                      	brne MultLoop ; No, repeat
+                                 		      ; Result is in R20:R19:R18, done ,1023 being highest count 29667 will be 15 bit answer of 1023 x 29
+                                 		      ; next add 1023 x 3 after 3 LSR to the previous number to get multiplication by 293
+                                 		      ; then put decimal where needed in display to get .293 mul
+
+
+RESOURCE USE INFORMATION
+------------------------
+
+Notice:
+The register and instruction counts are symbol table hit counts,
+and hence implicitly used resources are not counted, eg, the
+'lpm' instruction without operands implicitly uses r0 and z,
+none of which are counted.
+
+x,y,z are separate entities in the symbol table and are
+counted separately from r26..r31 here.
+
+.dseg memory usage only counts static data declared with .byte
+
+"ATtiny13A" register use summary:
+x  :   0 y  :   0 z  :   0 r0 :   6 r1 :   7 r2 :   5 r3 :   5 r4 :   2 
+r5 :   4 r6 :   0 r7 :   0 r8 :   3 r9 :   7 r10:   0 r11:   0 r12:   0 
+r13:   3 r14:   3 r15:   3 r16:  36 r17:  11 r18:  11 r19:  17 r20:  47 
+r21:   8 r22:  13 r23:  13 r24:   8 r25:  69 r26:  82 r27:   5 r28:   5 
+r29:   5 r30:   0 r31:   0 
+Registers used: 25 out of 35 (71.4%)
+
+"ATtiny13A" instruction use summary:
+.lds  :   0 .sts  :   0 adc   :   6 add   :   3 adiw  :   0 and   :   1 
+andi  :  13 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   3 brcs  :   2 break :   0 breq  :   1 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
+brne  :   9 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 cbi   :   0 cbr   :   0 clc   :   0 
+clh   :   0 cli   :   0 cln   :   0 clr   :   8 cls   :   0 clt   :   0 
+clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 cpi   :   4 
+cpse  :   0 dec   :   6 eor   :   0 icall :   0 ijmp  :   0 in    :   4 
+inc   :   4 ld    :   0 ldd   :   0 ldi   :  82 lds   :   0 lpm   :   0 
+lsl   :   2 lsr   :   3 mov   :  63 movw  :   0 neg   :   0 nop   :   3 
+or    :  12 ori   :   0 out   :  29 pop   :  13 push  :  13 rcall : 121 
+ret   :  16 reti  :   0 rjmp  :   2 rol   :   2 ror   :   4 sbc   :   0 
+sbci  :   3 sbi   :   0 sbic  :   0 sbis  :   0 sbiw  :   2 sbr   :   0 
+sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 
+ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
+spm   :   0 st    :   0 std   :   0 sts   :   0 sub   :   0 subi  :   5 
+swap  :   6 tst   :   1 wdr   :   0 
+Instructions used: 33 out of 105 (31.4%)
+
+"ATtiny13A" memory use summary [bytes]:
+Segment   Begin    End      Code   Data   Used    Size   Use%
+---------------------------------------------------------------
+[.cseg] 0x000000 0x00037e    894      0    894    1024  87.3%
+[.dseg] 0x000060 0x000060      0      0      0      64   0.0%
+[.eseg] 0x000000 0x000000      0      0      0      64   0.0%
+
+Assembly complete, 0 errors, 1 warnings

@@ -1,0 +1,59 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATtiny13A"</DEVICE>
+ <WORKING_DIR>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc</DIR>
+  <DIR>C:\Program Files\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn13adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\Debug\AssemblerApplication3PRESSURE GAUGE 10BIT.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>AssemblerApplication3PRESSURE GAUGE 10BIT.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>AssemblerApplication3PRESSURE GAUGE 10BIT.map</FILE>
+  <FILE>AssemblerApplication3PRESSURE GAUGE 10BIT.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>61</LINE></setup>
+  <lcd_init><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>530</LINE></lcd_init>
+  <delayTx1uS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>691</LINE></delayTx1uS>
+  <main><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>105</LINE></main>
+  <addroutine><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>115</LINE></addroutine>
+  <wipeclear><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>137</LINE></wipeclear>
+  <loop1><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>141</LINE></loop1>
+  <multiplication><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>720</LINE></multiplication>
+  <loop2><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>170</LINE></loop2>
+  <binbcd><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>199</LINE></binbcd>
+  <_bib1><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>202</LINE></_bib1>
+  <_bib2><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>209</LINE></_bib2>
+  <_bib3><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>216</LINE></_bib3>
+  <_bib4><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>223</LINE></_bib4>
+  <nibble_write_instruction><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>424</LINE></nibble_write_instruction>
+  <nibble_write_data><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>477</LINE></nibble_write_data>
+  <start><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>315</LINE></start>
+  <delay10uS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>706</LINE></delay10uS>
+  <ends><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>325</LINE></ends>
+  <init><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>337</LINE></init>
+  <bit_high><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>344</LINE></bit_high>
+  <bit_low><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>363</LINE></bit_low>
+  <ack><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>382</LINE></ack>
+  <writedata><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>403</LINE></writedata>
+  <rep><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>406</LINE></rep>
+  <highbit><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>413</LINE></highbit>
+  <sendend><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>415</LINE></sendend>
+  <delayTx1mS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>653</LINE></delayTx1mS>
+  <delayYx1mS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>638</LINE></delayYx1mS>
+  <delay1mS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>668</LINE></delay1mS>
+  <delay1mS_01><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>674</LINE></delay1mS_01>
+  <MultLoop><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>739</LINE></MultLoop>
+  <MultWoAdd><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURE GAUGE 10BIT\AssemblerApplication3PRESSURE GAUGE 10BIT\main.asm</FILE><LINE>745</LINE></MultWoAdd>
+ </LABELS>
+</ASSEMBLER_INFO>

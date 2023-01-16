@@ -1,0 +1,54 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATtiny13A"</DEVICE>
+ <WORKING_DIR>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc</DIR>
+  <DIR>C:\Program Files\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn13adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\Debug\AssemblerApplication for PRESSURE GUAGE.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>AssemblerApplication for PRESSURE GUAGE.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>AssemblerApplication for PRESSURE GUAGE.map</FILE>
+  <FILE>AssemblerApplication for PRESSURE GUAGE.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>49</LINE></setup>
+  <lcd_init><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>470</LINE></lcd_init>
+  <delayTx1uS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>631</LINE></delayTx1uS>
+  <MUL8x8><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>121</LINE></MUL8x8>
+  <LOOP><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>127</LINE></LOOP>
+  <SKIP><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>129</LINE></SKIP>
+  <binbcd><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>156</LINE></binbcd>
+  <_bib1><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>159</LINE></_bib1>
+  <_bib2><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>166</LINE></_bib2>
+  <_bib3><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>173</LINE></_bib3>
+  <_bib4><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>180</LINE></_bib4>
+  <nibble_write_instruction><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>364</LINE></nibble_write_instruction>
+  <nibble_write_data><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>417</LINE></nibble_write_data>
+  <start><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>255</LINE></start>
+  <delay10uS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>646</LINE></delay10uS>
+  <ends><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>265</LINE></ends>
+  <init><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>277</LINE></init>
+  <bit_high><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>284</LINE></bit_high>
+  <bit_low><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>303</LINE></bit_low>
+  <ack><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>322</LINE></ack>
+  <writedata><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>343</LINE></writedata>
+  <rep><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>346</LINE></rep>
+  <highbit><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>353</LINE></highbit>
+  <sendend><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>355</LINE></sendend>
+  <delayTx1mS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>593</LINE></delayTx1mS>
+  <delayYx1mS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>578</LINE></delayYx1mS>
+  <delay1mS><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>608</LINE></delay1mS>
+  <delay1mS_01><FILE>C:\Users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication for PRESSURE GUAGE\AssemblerApplication for PRESSURE GUAGE\main.asm</FILE><LINE>614</LINE></delay1mS_01>
+ </LABELS>
+</ASSEMBLER_INFO>

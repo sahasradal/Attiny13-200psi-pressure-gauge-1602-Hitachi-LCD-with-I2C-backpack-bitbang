@@ -1,0 +1,61 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATtiny13A"</DEVICE>
+ <WORKING_DIR>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc</DIR>
+  <DIR>C:\Program Files\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn13adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\Debug\AssemblerApplication3PRESSURESENSOR10BIT200P.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>AssemblerApplication3PRESSURESENSOR10BIT200P.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>AssemblerApplication3PRESSURESENSOR10BIT200P.map</FILE>
+  <FILE>AssemblerApplication3PRESSURESENSOR10BIT200P.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>61</LINE></setup>
+  <lcd_init><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>531</LINE></lcd_init>
+  <delayTx1uS><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>692</LINE></delayTx1uS>
+  <main><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>105</LINE></main>
+  <addroutine><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>115</LINE></addroutine>
+  <X1><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>760</LINE></X1>
+  <wipeclear><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>138</LINE></wipeclear>
+  <loop1><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>142</LINE></loop1>
+  <multiplication><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>721</LINE></multiplication>
+  <loop2><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>171</LINE></loop2>
+  <binbcd><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>200</LINE></binbcd>
+  <_bib1><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>203</LINE></_bib1>
+  <_bib2><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>210</LINE></_bib2>
+  <_bib3><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>217</LINE></_bib3>
+  <_bib4><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>224</LINE></_bib4>
+  <nibble_write_instruction><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>425</LINE></nibble_write_instruction>
+  <nibble_write_data><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>478</LINE></nibble_write_data>
+  <start><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>316</LINE></start>
+  <delay10uS><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>707</LINE></delay10uS>
+  <ends><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>326</LINE></ends>
+  <init><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>338</LINE></init>
+  <bit_high><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>345</LINE></bit_high>
+  <bit_low><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>364</LINE></bit_low>
+  <ack><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>383</LINE></ack>
+  <writedata><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>404</LINE></writedata>
+  <rep><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>407</LINE></rep>
+  <highbit><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>414</LINE></highbit>
+  <sendend><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>416</LINE></sendend>
+  <delayTx1mS><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>654</LINE></delayTx1mS>
+  <delayYx1mS><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>639</LINE></delayYx1mS>
+  <delay1mS><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>669</LINE></delay1mS>
+  <delay1mS_01><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>675</LINE></delay1mS_01>
+  <MultLoop><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>743</LINE></MultLoop>
+  <MultWoAdd><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>749</LINE></MultWoAdd>
+  <X2><FILE>c:\users\pappan\Documents\Atmel Studio\7.0\AssemblerApplication3PRESSURESENSOR10BIT200P\AssemblerApplication3PRESSURESENSOR10BIT200P\main.asm</FILE><LINE>765</LINE></X2>
+ </LABELS>
+</ASSEMBLER_INFO>
